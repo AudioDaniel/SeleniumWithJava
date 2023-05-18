@@ -1,0 +1,77 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+
+public class BasePage {
+    //protected static WebDriver driver;
+    public static WebDriver driver;
+    protected static WebDriverWait wait;
+
+
+    public BasePage(WebDriver driver) {
+        BasePage.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    public static void closeBrowser() {
+        driver.quit();
+    }
+
+    private static Boolean headlessMode = Boolean.parseBoolean(System.getProperty("headless-mode"));
+    // SELECCIÓN DE NAVEGADOR A TRAVÉS DE PARÁMETRO DE JUNIT
+    // -------------------------------------------------
+    public static void chromeDriver() {
+
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        //options.addArguments("--start-maximized");
+        options.addArguments("--force-dark-mode");
+        if (headlessMode) {
+            options.addArguments("--headless");
+            System.out.println("\n Driver mode: Headless");
+        }
+
+        System.out.println("\n WebDriver: ChromeDriver");
+        driver = new ChromeDriver(options);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
+    public static void firefoxDriver() {
+        FirefoxOptions options = new FirefoxOptions();
+        //options.addArguments("--remote-allow-origins=*");
+        //options.addArguments("--start-maximized");
+        //options.addArguments("--force-dark-mode");
+        if (headlessMode) {
+            options.addArguments("--headless");
+            System.out.println("\n Driver mode: Headless");
+        }
+
+        System.out.println("\n WebDriver: FirefoxDriver");
+        driver = new FirefoxDriver(options);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
+
+    static {
+        switch (System.getProperty("web-driver")){
+            case "chrome":
+                chromeDriver();
+                break;
+            case "firefox":
+                firefoxDriver();
+                break;
+            default: chromeDriver();
+        }
+
+        // TODO HACER README DOCUMENTACIÓN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // DEPENDENCIAS , PLUGINS, DESCRIPCION DEL PROYECTO, ESTRUCTURA DEL PROYECTO
+    }
+}
