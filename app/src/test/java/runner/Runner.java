@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         },
         //tags = "@Saucedemo",
         plugin = {"pretty",
-                "html:report/cucumber-report/cucumber.html",
+                //"html:report/cucumber-report/cucumber.html",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
                 //"json:target1/cucumber-report/cucumber.json"
         },
