@@ -77,6 +77,6 @@ Feature: Worker profile management
       | Maintenance |
 
     Scenario Outline:
-      When
+
 
       Examples:

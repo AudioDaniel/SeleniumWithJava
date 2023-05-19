@@ -26,8 +26,7 @@ public class BasePage {
         driver.quit();
     }
 
-    private static Boolean headlessMode = Boolean.parseBoolean(System.getProperty("headless-mode"));
-    // SELECCIÓN DE NAVEGADOR A TRAVÉS DE PARÁMETRO DE JUNIT
+    private static Boolean headlessMode = Boolean.parseBoolean(System.getProperty("headlessMode"));
     // -------------------------------------------------
     public static void chromeDriver() {
 
@@ -61,7 +60,7 @@ public class BasePage {
     }
 
     static {
-        switch (System.getProperty("web-driver")){
+        switch (System.getProperty("webDriver")){
             case "chrome":
                 chromeDriver();
                 break;

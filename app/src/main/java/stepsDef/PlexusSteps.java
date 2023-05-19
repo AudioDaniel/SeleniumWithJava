@@ -1,15 +1,12 @@
 package stepsDef;
 
 import io.cucumber.datatable.DataTable;
-import pages.Plexus.Newsletter;
-import pages.Plexus.Contacto;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
-
-import java.util.List;
-import java.util.Map;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.Plexus.Contacto;
+import pages.Plexus.Newsletter;
 
 public class PlexusSteps {
 

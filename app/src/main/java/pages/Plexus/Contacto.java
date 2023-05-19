@@ -1,9 +1,9 @@
 package pages.Plexus;
 
+import elements.PlexusElements;
 import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
 import scripts.Commons;
-import elements.PlexusElements;
 import utils.RGBtoANSIConverter;
 
 import java.util.List;

@@ -1,17 +1,11 @@
 package stepsDef;
-import elements.OrangeElements;
-import org.junit.Assert;
-import pages.orange.Login;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
-import pages.orange.Profile;
-import pages.orange.Admin;
-import pages.orange.PIM;
-import pages.orange.Recruitment;
-import scripts.Commons;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+import pages.orange.*;
 import scripts.Configuration;
 
 import java.util.Properties;

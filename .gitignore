@@ -1,3 +1,4 @@
 */build
-IntelliJ/Selenium/.gradle/
-IntelliJ/Selenium/app/Test-reports/
+*/.gradle/
+/app/report/
+/app/Test-reports/

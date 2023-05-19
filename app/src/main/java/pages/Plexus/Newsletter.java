@@ -1,7 +1,7 @@
 package pages.Plexus;
 
-import scripts.Commons;
 import elements.PlexusElements;
+import scripts.Commons;
 
 public class Newsletter {
 

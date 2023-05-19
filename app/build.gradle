@@ -4,7 +4,7 @@ plugins {
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
-sourceCompatibility 17
+sourceCompatibility = 17
 
 repositories {
     mavenCentral()
@@ -23,5 +23,9 @@ dependencies {
 
 test {
     systemProperty "cucumber.options", System.getProperty("cucumber.options")
-    systemProperty "window-size", System.getProperty("window-size")
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+    systemProperty "windowSize", System.getProperty("windowSize")
+    systemProperty "webDriver", System.getProperty("webDriver")
+    systemProperty "fullSteps", System.getProperty("fullSteps")
+    systemProperty "headlessMode", System.getProperty("headlessMode")
 }

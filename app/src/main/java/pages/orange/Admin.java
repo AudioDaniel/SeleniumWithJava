@@ -1,7 +1,6 @@
 package pages.orange;
 
 import elements.OrangeElements;
-import org.jsoup.select.CombiningEvaluator;
 import scripts.Commons;
 
 public class Admin {

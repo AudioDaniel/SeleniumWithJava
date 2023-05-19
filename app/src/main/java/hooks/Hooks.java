@@ -1,17 +1,17 @@
 package hooks;
 
-import utils.BrowserUtils;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import pages.BasePage;
+import utils.BrowserUtils;
 
 import static pages.BasePage.driver;
 
 public class Hooks {
     @Before
     public static void setUp() {
-        String windowSize = System.getProperty("window-size");
+        String windowSize = System.getProperty("windowSize");
         if (windowSize != null){
             BrowserUtils.setWindowSize(driver,windowSize);
             System.out.println("\n Window size: " + windowSize);
@@ -27,7 +27,7 @@ public class Hooks {
 
     @AfterStep
     public void screenshot(Scenario scenario) {
-        boolean fullSteps = Boolean.parseBoolean(System.getProperty("full-steps"));
+        boolean fullSteps = Boolean.parseBoolean(System.getProperty("fullSteps"));
         if (scenario.isFailed() | fullSteps) {
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "image");

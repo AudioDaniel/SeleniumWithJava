@@ -1,7 +1,7 @@
 package pages;
 
-import scripts.Commons;
 import elements.SaucedemoElements;
+import scripts.Commons;
 
 public class SaucedemoPage {
 
