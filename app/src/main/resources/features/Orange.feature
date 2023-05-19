@@ -75,8 +75,3 @@ Feature: Worker profile management
       | Directory   |
       | Buzz        |
       | Maintenance |
-
-    Scenario Outline:
-
-
-      Examples:

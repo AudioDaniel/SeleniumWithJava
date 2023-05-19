@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="OrangeFullScreen " type="JUnit" factoryName="JUnit">
-    <module name="Selenium.app.main" />
+    <module name="Selenium.app.test" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="runner.*" />
@@ -11,7 +11,7 @@
     <option name="MAIN_CLASS_NAME" value="runner.Runner" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
-    <option name="VM_PARAMETERS" value="-ea -Dcucumber.filter.tags=&quot;@Orange&quot; -Dweb-driver=chrome" />
+    <option name="VM_PARAMETERS" value="-ea -Dcucumber.filter.tags=&quot;@Orange&quot; -DwebDriver=chrome" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
