@@ -3,8 +3,6 @@ name: Ejecucion de Tests con Selenium
 on:
   push:
   branches: [ "main" ]
-  pull_request:
-  branches: [ "main" ]
   
 permissions:
   contents: read
