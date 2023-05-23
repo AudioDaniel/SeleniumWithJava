@@ -69,8 +69,5 @@ public class BasePage {
                 break;
             default: chromeDriver();
         }
-
-        // TODO HACER README DOCUMENTACIÓN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        // DEPENDENCIAS , PLUGINS, DESCRIPCION DEL PROYECTO, ESTRUCTURA DEL PROYECTO
     }
 }
