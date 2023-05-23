@@ -31,7 +31,7 @@ public class SaucedemoSteps {
         SaucedemoPage.enterPassword(password);
     }
 
-    @When("I click on the login button")
+    @When("I make a click on the login button")
     public void clickOnLoginButton() {
         SaucedemoPage.clickLoginButton();
     }
