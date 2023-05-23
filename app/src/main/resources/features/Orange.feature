@@ -56,7 +56,7 @@ Feature: Worker profile management
 
     Examples:
       | section | username   | password | name               |
-      | Admin   | josetoledo | abc123.. | Jose Toledo Toledo |
+      | Admin   | josetoledo | aaaao | Jose Toledo Toledo |
 
   Scenario Outline: Navigating through sections
     When I click on <section> button
