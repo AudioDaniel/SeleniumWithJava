@@ -36,7 +36,7 @@ public class SaucedemoSteps {
         SaucedemoPage.clickLoginButton();
     }
 
-    @Then("I should be redirected to the home page")
+    @Then("I should be redirected into the home page")
     public void verifyRedirectedToHomePage() {
         //Assert.assertTrue(Commons.verifyElementPresent(homePageLocator));
     }

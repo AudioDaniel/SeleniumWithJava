@@ -8,7 +8,7 @@ Feature: sauceDemoTest
     When I enter my valid email "<email>"
     And I enter my password "<password>"
     When I make a click on the login button
-    Then I should be redirected to the home page
+    Then I should be redirected into the home page
 
     Examples:
       | email         | password     |
