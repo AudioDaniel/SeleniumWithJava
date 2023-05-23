@@ -11,7 +11,7 @@
     <option name="MAIN_CLASS_NAME" value="runner.Runner" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
-    <option name="VM_PARAMETERS" value="-ea -Dcucumber.filter.tags=&quot;@PlexusNewsletter&quot; -DwebDriver=firefox -DfullSteps=true -DheadlessMode=false -DwindowSize=1600x900" />
+    <option name="VM_PARAMETERS" value="-ea -Dcucumber.filter.tags=&quot;@PlexusNewsletter&quot; -DwindowSize=800x1300 -DwebDriver=chrome -DfullSteps=true -DheadlessMode=false " />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

@@ -33,6 +33,9 @@ public class BasePage {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--ignore-ssl-errors=yes");
+        options.addArguments("--ignore-certificate-errors");
         //options.addArguments("--start-maximized");
         options.addArguments("--force-dark-mode");
         if (headlessMode) {
@@ -49,6 +52,9 @@ public class BasePage {
         //options.addArguments("--remote-allow-origins=*");
         //options.addArguments("--start-maximized");
         //options.addArguments("--force-dark-mode");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--ignore-ssl-errors=yes");
+        options.addArguments("--ignore-certificate-errors");
         if (headlessMode) {
             options.addArguments("--headless");
             System.out.println("\n Driver mode: Headless");
