@@ -20,4 +20,4 @@ jobs:
           distribution: 'temurin'
           gradle-version: '8.1.1'
       - name: Build with Gradle
-        run: gradle test -Dcucumber.filter.tags="@PlexusNewsletter" -DwebDriver=chrome -DheadlessMode=false -DwindowSize=800x1300 -DfullSteps=true --info
+        run: gradle test -Dcucumber.filter.tags="@PlexusNewsletter" -DwebDriver=firefox -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
