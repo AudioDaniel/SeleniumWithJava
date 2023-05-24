@@ -23,8 +23,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           gradle-version: '8.1.1'
-      - name: Build with Gradle
-        run: gradle test -Dcucumber.filter.tags="@Saucedemo" -DwebDriver=firefox -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
+      - name: Build with Gradle Chrome @Saucedemo
+        run: gradle test -Dcucumber.filter.tags="@Saucedemo" -DwebDriver=chrome -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
+      - name: Build with Gradle Firefox @PlexusNewsletter
+        run: gradle test -Dcucumber.filter.tags="@PlexusNewsletter" -DwebDriver=firefox -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
       - uses: actions/upload-artifact@v3 
         with:
           name: html report chrome
