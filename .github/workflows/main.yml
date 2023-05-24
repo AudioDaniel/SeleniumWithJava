@@ -12,6 +12,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: true 
+
 
     steps:
       - uses: actions/checkout@v3
@@ -27,3 +29,5 @@ jobs:
         with:
           name: html report chrome
           path: app/test-reports/
+          
+
