@@ -26,4 +26,4 @@ jobs:
       - uses: actions/upload-artifact@v3 
         with:
           name: html report chrome
-          path: app/Test-reports/
+          path: app/test-reports/
