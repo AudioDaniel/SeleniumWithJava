@@ -28,6 +28,7 @@ jobs:
       - name: Build with Gradle Firefox @PlexusNewsletter
         run: gradle test -Dcucumber.filter.tags="@PlexusNewsletter" -DwebDriver=firefox -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
       - uses: actions/upload-artifact@v3 
+        if: alway()
         with:
           name: html report chrome
           path: app/test-reports/
