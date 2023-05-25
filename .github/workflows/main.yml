@@ -30,8 +30,8 @@ jobs:
       - uses: actions/upload-artifact@v2
         if: always()
         with:
-        name: html report chrome
-        path: app/test-reports/
+          name: html report chrome
+          path: app/test-reports/
       - uses: deblockt/cucumber-report-annotations-action@v1.7
         if: always()
         with:
