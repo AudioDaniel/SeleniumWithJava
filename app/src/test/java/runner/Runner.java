@@ -13,8 +13,9 @@ import org.junit.runner.RunWith;
         //tags = "@Saucedemo",
         plugin = {"pretty",
                 //"html:report/cucumber-report/cucumber.html",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 //"json:target1/cucumber-report/cucumber.json"
+                "json:report/cucumber-report/cucumber.json"
         },
         stepNotifications = true
 )

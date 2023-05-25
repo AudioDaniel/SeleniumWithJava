@@ -9,7 +9,6 @@ Feature: sauceDemoTest
     And I enter my password "<password>"
     When I make a click on the login button
     Then I should be redirected into the home page
-
     Examples:
       | email         | password     |
       | standard_user | secret_sauce |
