@@ -36,7 +36,7 @@ jobs:
         if: always()
         with:
           name: json report
-          access-token: ${{ secrets.GH_TOKEN }}
+          access-token: ${{ secrets.GIHUB_TOKEN }}
           path: "app/report/cucumber-report/cucumber.json"
 
 
