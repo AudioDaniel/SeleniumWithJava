@@ -20,17 +20,23 @@ jobs:
           gradle-version: '8.1.1'
       - name: build with gradle chrome @Saucedemo
         run: gradle test -Dcucumber.filter.tags="@Saucedemo" -DwebDriver=chrome -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: html report chrome
+          path: app/test-reports/
       - name: build with gradle firefox @Plexusnewsletter
         run: gradle test -Dcucumber.filter.tags="@PlexusNewsletter" -DwebDriver=firefox -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+        name: html report chrome
+        path: app/test-reports/
       - uses: deblockt/cucumber-report-annotations-action@v1.7
         if: always()
         with:
           name: json report
           access-token: ${{ secrets.GH_TOKEN }}
           path: "app/report/cucumber-report/cucumber.json"
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: html report chrome
-          path: app/test-reports/
+
 
