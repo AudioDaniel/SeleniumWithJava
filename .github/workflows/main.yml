@@ -23,6 +23,7 @@ jobs:
       - name: build with gradle firefox @Plexusnewsletter
         run: gradle test -Dcucumber.filter.tags="@PlexusNewsletter" -DwebDriver=firefox -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
       - uses: deblockt/cucumber-report-annotations-action@v1.7
+        if: always()
         with:
           name: json report
           access-token: ${{ secrets.GH_TOKEN }}
