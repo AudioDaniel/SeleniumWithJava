@@ -5,14 +5,12 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  permissions:
-    id-token: write # This is required for requesting the JWT
-    contents: read  # This is required for actions/checkout
   build:
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      contents: read  # This is required for actions/checkout
     runs-on: ubuntu-latest
     continue-on-error: true
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@v2
       - name: set up jdk 17
@@ -41,5 +39,3 @@ jobs:
           name: json report
           access-token: ${{ secrets.GITHUB_TOKEN }}
           path: "app/report/cucumber-report/cucumber.json"
-
-
