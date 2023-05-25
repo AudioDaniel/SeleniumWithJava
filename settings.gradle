@@ -1,4 +1,4 @@
-rootProject.name = 'Selenium'
+    rootProject.name = 'Selenium'
 include 'src:main:app'
 findProject(':src:main:app')?.name = 'app'
 include 'app'

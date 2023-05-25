@@ -1,4 +1,8 @@
 name: Ejecucion de Tests con Selenium
+uses: deblockt/cucumber-report-annotations-action@v1.7
+with:
+  access-token: ${{ secrets.GH_TOKEN }}
+  path: "**/report/cucumber-report.json"
 
 on:
   push:
@@ -6,13 +10,16 @@ on:
   pull_request: 
     branches: [ "main" ]
 
+
+
 permissions:
   contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    continue-on-error: true 
+    continue-on-error: true
+
 
 
     steps:
