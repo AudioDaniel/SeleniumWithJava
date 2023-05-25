@@ -18,13 +18,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           gradle-version: '8.1.1'
-      - name: build with gradle chrome @saucedemo
-        run: gradle test -dcucumber.filter.tags="@saucedemo" -dwebdriver=chrome -dheadlessmode=true -dwindowsize=800x1300 -dfullsteps=true # --info
-      - name: build with gradle firefox @plexusnewsletter
-        run: gradle test -dcucumber.filter.tags="@plexusnewsletter" -dwebdriver=firefox -dheadlessmode=true -dwindowsize=800x1300 -dfullsteps=true # --info
+      - name: build with gradle chrome @Saucedemo
+        run: gradle test -Dcucumber.filter.tags="@Saucedemo" -Dwebdriver=chrome -Dheadlessmode=true -Dwindowsize=800x1300 -Dfullsteps=true # --info
+      - name: build with gradle firefox @Plexusnewsletter
+        run: gradle test -Dcucumber.filter.tags="@Plexusnewsletter" -Dwebdriver=firefox -Dheadlessmode=true -Dwindowsize=800x1300 -Dfullsteps=true # --info
       - uses: deblockt/cucumber-report-annotations-action@v1.7
         with:
-          access-token: ${{ secrets.gh_token }}
+          access-token: ${{ secrets.GH_TOKEN }}
           path: "**/report/cucumber-report.json"
       - uses: actions/upload-artifact@v2
         if: always()
