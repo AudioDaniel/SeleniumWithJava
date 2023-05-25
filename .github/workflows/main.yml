@@ -24,8 +24,9 @@ jobs:
         run: gradle test -Dcucumber.filter.tags="@PlexusNewsletter" -DwebDriver=firefox -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
       - uses: deblockt/cucumber-report-annotations-action@v1.7
         with:
+          name: json report
           access-token: ${{ secrets.GH_TOKEN }}
-          path: "**/cucumber.json"
+          path: "app/report/cucumber-report/cucumber.json"
       - uses: actions/upload-artifact@v2
         if: always()
         with:
