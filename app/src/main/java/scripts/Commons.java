@@ -1,10 +1,7 @@
 package scripts;
 
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 
@@ -13,11 +10,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import org.openqa.selenium.JavascriptExecutor;
+
 
 public class Commons extends BasePage {
     public Commons(WebDriver driver) {
         super(driver);
     }
+
 
     // TEXT INPUT
 
@@ -74,6 +74,20 @@ public class Commons extends BasePage {
             Assert.fail("Failed to find element type " + elementType + " with text: " + text);
             return null;
         }
+    }
+    // JAVASCRIPT MODIFY ELEMENT -----------------------------
+
+    public static void setCssAttributeElement(WebElement element,String cssProperty, String cssValue){
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        // String script = "arguments[0].setAttribute('style', arguments[0].getAttribute('style') + '" + cssProperty + ": " + cssValue + ";');";
+        String script = "arguments[0].style." + cssProperty + " = '" + cssValue + "'";
+        jsExecutor.executeScript(script,element);
+    }
+
+    public static void highlightElement(WebElement element){
+        setCssAttributeElement(element,"border","red");
+        setCssAttributeElement(element,"borderWidth","medium");
+        setCssAttributeElement(element,"borderStyle","solid");
     }
 
     // WAIT FOR ELEMENT ----------------------------

@@ -1,6 +1,7 @@
 package pages;
 
 import elements.SaucedemoElements;
+import org.openqa.selenium.support.ui.Wait;
 import scripts.Commons;
 
 public class SaucedemoPage {
@@ -22,5 +23,11 @@ public class SaucedemoPage {
 
     public static void enterPassword(String password) {
         Commons.writeText(inputPassword,password);
+    }
+
+    public static void testStep() {
+        Commons.highlightElement(Commons.findElementByXpath(SaucedemoElements.inputEmail));
+        Commons.highlightElement(Commons.findElementByXpath(SaucedemoElements.inputPassword));
+
     }
 }

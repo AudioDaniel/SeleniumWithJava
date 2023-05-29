@@ -53,4 +53,15 @@ public class SaucedemoSteps {
                 )
         );
     }
+
+
+    @When("TESTSTEP")
+    public void testStep() {
+        SaucedemoPage.testStep();
+        try {
+            Thread.sleep(9000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
