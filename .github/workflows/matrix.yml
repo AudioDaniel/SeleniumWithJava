@@ -1,4 +1,4 @@
-name: ejecucion de tests con selenium
+name: ejecución con matriz
 on:
   push:
     branches: [ "main" ]
@@ -6,8 +6,9 @@ on:
     branches: [ "main" ]
 jobs:
   build:
-    matrix:
-      webdriver: [chrome,firefox]
+    strategy:
+      matrix:
+        webdriver: [chrome,firefox]
     permissions:
       id-token: write # This is required for requesting the JWT
       contents: read  # This is required for actions/checkout
