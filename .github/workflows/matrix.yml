@@ -1,0 +1,43 @@
+name: ejecucion de tests con selenium
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    matrix:
+      webdriver: [chrome,firefox]
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      contents: read  # This is required for actions/checkout
+      checks: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: set up jdk 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          gradle-version: '8.1.1'
+      - name: build with gradle chrome @Saucedemo
+        run: gradle test -Dcucumber.filter.tags="@Saucedemo" -DwebDriver=${{ matrix.webdriver }} -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: html report chrome
+          path: app/test-reports/
+      - name: build with gradle firefox @Plexusnewsletter
+        run: gradle test -Dcucumber.filter.tags="@PlexusNewsletter" -DwebDriver=firefox -DheadlessMode=true -DwindowSize=800x1300 -DfullSteps=true --info
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: html report firefox
+          path: app/test-reports/
+      - uses: deblockt/cucumber-report-annotations-action@v1.7
+        if: always()
+        with:
+          name: json report
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          path: "app/report/cucumber-report/cucumber.json"
