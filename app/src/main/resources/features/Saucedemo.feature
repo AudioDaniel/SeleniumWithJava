@@ -13,6 +13,7 @@ Feature: sauceDemoTest
       | email         | password     |
       | standard_user | secret_sauce |
 
+
   Scenario Outline: Unsucessful login
     When I make a click on the login button
     Then an error message is displayed with text: <message>

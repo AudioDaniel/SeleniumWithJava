@@ -64,4 +64,9 @@ public class SaucedemoSteps {
             throw new RuntimeException(e);
         }
     }
+
+    @When("^the user add the product '(.*)'$")
+    public void addProduct(String product){
+        SaucedemoPage.addProduct(product);
+    }
 }

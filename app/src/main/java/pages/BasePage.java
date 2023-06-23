@@ -66,7 +66,7 @@ public class BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    static {
+    public static void initDriver() {
         switch (System.getProperty("webDriver")){
             case "chrome":
                 chromeDriver();

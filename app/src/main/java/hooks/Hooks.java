@@ -11,6 +11,7 @@ import static pages.BasePage.driver;
 public class Hooks {
     @Before
     public static void setUp() {
+        BasePage.initDriver();
         String windowSize = System.getProperty("windowSize");
         if (windowSize != null){
             BrowserUtils.setWindowSize(driver,windowSize);
@@ -23,6 +24,7 @@ public class Hooks {
     @After
     public void afterScenario(){
         driver.manage().deleteAllCookies();
+        driver.quit();
     }
 
     @AfterStep
@@ -34,8 +36,6 @@ public class Hooks {
             System.out.println("Screenshot taken -----------------");
         }
     }
-    // TEST TEST BORRAR aa TODO TEST aaaa
-
 
     @AfterAll
     public static void tearDown() {

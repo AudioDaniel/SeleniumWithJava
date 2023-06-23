@@ -30,4 +30,8 @@ public class SaucedemoPage {
         Commons.highlightElement(Commons.findElementByXpath(SaucedemoElements.inputPassword));
 
     }
+
+    public static void addProduct(String product) {
+        Commons.click(String.format(SaucedemoElements.addCartGenericXpath, "Sauce Labs Backpack"));
+    }
 }
