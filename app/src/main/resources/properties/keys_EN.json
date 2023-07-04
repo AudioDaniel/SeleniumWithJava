@@ -1,0 +1,9 @@
+{
+  "CONFIG": {
+    "CHECK_ERROR_MESSAGES": true
+  },
+  "MESSAGES": {
+    "PROPERTY_LOGIN_WITH_WRONG_CREDENTIALS": "Epic sadface: Username and password do not match any user in this service",
+    "PROPERTY_LOGIN_NO_USER": "Epic sadface: Username is required"
+  }
+}

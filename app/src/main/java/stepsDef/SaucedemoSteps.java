@@ -9,7 +9,11 @@ import pages.SaucedemoPage;
 import scripts.Commons;
 import scripts.Configuration;
 
+import java.io.IOException;
+import java.util.Map;
 import java.util.Properties;
+
+import utils.JsonKeyLoader;
 
 
 public class SaucedemoSteps {
@@ -54,6 +58,23 @@ public class SaucedemoSteps {
         );
     }
 
+    @Then("^JSON an error message is displayed with text: (.*)$")
+    public void jsonAnErrorMessageIsDisplayedWithTextMessage(String keyProperty) {
+        System.out.println(keyProperty);
+        boolean checkError = JsonKeyLoader.getBooleanValue("CONFIG", "CHECK_ERROR_MESSAGES");
+        String message = JsonKeyLoader.getStringValue("MESSAGES", "PROPERTY_LOGIN_NO_USER");
+
+        if (checkError) {
+            Assert.assertTrue(
+                    Commons.verifyElementHasAttribute(
+                            Commons.findElementByText("header3", message),
+                            "textContent",
+                            message
+
+                    ));
+        }
+    }
+
 
     @When("TESTSTEP")
     public void testStep() {
@@ -66,7 +87,9 @@ public class SaucedemoSteps {
     }
 
     @When("^the user add the product '(.*)'$")
-    public void addProduct(String product){
+    public void addProduct(String product) {
         SaucedemoPage.addProduct(product);
     }
+
+
 }

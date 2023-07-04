@@ -13,13 +13,16 @@ Feature: sauceDemoTest
       | email         | password     |
       | standard_user | secret_sauce |
 
-
-  Scenario Outline: Unsucessful login
+@UnsuccessfulLogin
+  Scenario Outline: Unsuccessful login
     When I make a click on the login button
-    Then an error message is displayed with text: <message>
+    #Then an error message is displayed with text: <message>
+    Then JSON an error message is displayed with text: <message>
 
-    Examples:
+
+  Examples:
+  # TODO AÑADIR "@"
       | message                 |
-      | @PROPERTY_LOGIN_NO_USER |
+      | PROPERTY_LOGIN_NO_USER |
 
 
